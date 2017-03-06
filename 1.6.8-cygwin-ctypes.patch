@@ -1,0 +1,11 @@
+--- origsrc/pyenchant-1.6.8/enchant/_enchant.py	2016-02-15 03:28:18.000000000 -0600
++++ src/pyenchant-1.6.8/enchant/_enchant.py	2017-03-06 12:24:56.073391100 -0600
+@@ -66,6 +66,8 @@ def _e_path_possibilities():
+     # Allow it to be overridden using an environment variable.
+     yield os.environ.get("PYENCHANT_LIBRARY_PATH")
+     # For linuxish systems, allow default soname lookup a chance to succeed.
++    if sys.platform == "cygwin":
++        yield "cygenchant-1.dll"
+     if sys.platform not in ("win32", "darwin"):
+         yield "libenchant.so.1.6.0"
+         yield "libenchant.so.1"

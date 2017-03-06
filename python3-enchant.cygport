@@ -1,0 +1,18 @@
+ORIG_PN="pyenchant"
+inherit python3-distutils
+
+NAME="python3-enchant"
+VERSION=1.6.8
+RELEASE=1
+CATEGORY="Python"
+SUMMARY="Py3K Enchant spellchecker bindings"
+DESCRIPTION="PyEnchant is a set of language bindings and some wrapper classes
+to make the excellent Enchant spellchecker available as a Python module. It
+includes all the functionality of Enchant with the flexibility of Python and a
+nice Pythonic object-oriented interface. It also aims to provide some higher-
+level functionality than is available in the C API."
+HOMEPAGE="http://packages.python.org/pyenchant/"
+
+PATCH_URI="1.6.8-cygwin-ctypes.patch"
+
+REQUIRES="libenchant1" # ctypes
